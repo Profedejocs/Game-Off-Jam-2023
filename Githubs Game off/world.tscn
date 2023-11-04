@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://byrooe2vmxksw"]
+
+[ext_resource type="PackedScene" uid="uid://b7bfu7asnrnui" path="res://player.tscn" id="1_6sqss"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nhfb8"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_4keio"]
+sky_material = SubResource("ProceduralSkyMaterial_nhfb8")
+
+[sub_resource type="Environment" id="Environment_gyhod"]
+background_mode = 2
+sky = SubResource("Sky_4keio")
+tonemap_mode = 2
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4qblp"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wicpe"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qmtx3"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="World" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gyhod")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_6sqss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.592138, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_4qblp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.253, 0, 0, 0, 0.95, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_wicpe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_qmtx3")
