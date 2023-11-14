@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://b74p0u61cn2rg"]
+
+[ext_resource type="Script" path="res://Player/Bullet/Bullet.gd" id="1_js88h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2ptr"]
+size = Vector2(40, 40)
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_js88h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s2ptr")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
