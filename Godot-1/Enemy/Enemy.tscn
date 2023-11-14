@@ -1,15 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbmq47f63njf6"]
+[gd_scene load_steps=4 format=3 uid="uid://bht0hb7k74fyj"]
 
-[ext_resource type="Script" path="res://Player/Player.gd" id="1_f4e7t"]
+[ext_resource type="Script" path="res://Enemy/Enemy.gd" id="1_llp5h"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8oup4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogr5a"]
 size = Vector2(40, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpcox"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhxhk"]
 size = Vector2(45, 45)
 
-[node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_f4e7t")
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_llp5h")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -23,14 +23,15 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.215686, 1, 1)
+color = Color(1, 0, 0.2, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_8oup4")
+shape = SubResource("RectangleShape2D_ogr5a")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_dpcox")
+shape = SubResource("RectangleShape2D_lhxhk")
+debug_color = Color(0.682353, 0.501961, 0, 0.419608)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
