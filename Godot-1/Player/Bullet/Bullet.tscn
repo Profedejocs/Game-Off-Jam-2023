@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b74p0u61cn2rg"]
+[gd_scene load_steps=4 format=3 uid="uid://b74p0u61cn2rg"]
 
 [ext_resource type="Script" path="res://Player/Bullet/Bullet.gd" id="1_js88h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2ptr"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5o0vu"]
 size = Vector2(40, 40)
 
 [node name="Bullet" type="Area2D"]
@@ -23,6 +26,12 @@ grow_vertical = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s2ptr")
+
+[node name="hurt" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_5o0vu")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
