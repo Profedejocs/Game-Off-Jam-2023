@@ -1,6 +1,105 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbmq47f63njf6"]
+[gd_scene load_steps=17 format=3 uid="uid://bbmq47f63njf6"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_f4e7t"]
+[ext_resource type="Texture2D" uid="uid://dpdwe4iyygxru" path="res://assets/BACK/f1.png" id="2_kb3mj"]
+[ext_resource type="Texture2D" uid="uid://d3qekp4j8bxef" path="res://assets/FRONT/z1.png" id="2_tqa4v"]
+[ext_resource type="Texture2D" uid="uid://db5g6wtkwi4fo" path="res://assets/FRONT/z2.png" id="3_l77gv"]
+[ext_resource type="Texture2D" uid="uid://dqp2k24airi1l" path="res://assets/BACK/f2.png" id="3_nks3r"]
+[ext_resource type="Texture2D" uid="uid://dpb0raxmi8s8r" path="res://assets/BACK/f12.png" id="4_rt0si"]
+[ext_resource type="Texture2D" uid="uid://dy0jll6ndloix" path="res://assets/FRONT/z12.png" id="4_v6u8l"]
+[ext_resource type="Texture2D" uid="uid://ctja4ax4xftit" path="res://assets/FRONT/z3.png" id="5_obk73"]
+[ext_resource type="Texture2D" uid="uid://c22txqknnr5rr" path="res://assets/BACK/f3.png" id="5_xkpce"]
+[ext_resource type="Texture2D" uid="uid://hglk8vjtbd3k" path="res://assets/SIDE/c1.png" id="10_sg0ry"]
+[ext_resource type="Texture2D" uid="uid://co05ibigpsxtf" path="res://assets/SIDE/c2.png" id="11_4w3yn"]
+[ext_resource type="Texture2D" uid="uid://biucw0wu14rot" path="res://assets/SIDE/c12.png" id="12_0mi13"]
+[ext_resource type="Texture2D" uid="uid://bny14yg8kkp80" path="res://assets/SIDE/c3.png" id="13_og7ay"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_shvsn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kb3mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rt0si")
+}],
+"loop": true,
+"name": &"back_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kb3mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nks3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rt0si")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xkpce")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tqa4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l77gv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v6u8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_obk73")
+}],
+"loop": true,
+"name": &"front_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tqa4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v6u8l")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_sg0ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0mi13")
+}],
+"loop": true,
+"name": &"side_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_sg0ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4w3yn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0mi13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_og7ay")
+}],
+"loop": true,
+"name": &"side_walk",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8oup4"]
 size = Vector2(40, 40)
@@ -11,19 +110,12 @@ size = Vector2(45, 45)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_f4e7t")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.215686, 1, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -2.99998)
+scale = Vector2(0.0925926, 0.0894886)
+sprite_frames = SubResource("SpriteFrames_shvsn")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8oup4")
@@ -34,6 +126,7 @@ shape = SubResource("RectangleShape2D_8oup4")
 shape = SubResource("RectangleShape2D_dpcox")
 
 [node name="Gun" type="ColorRect" parent="."]
+visible = false
 offset_left = 10.0
 offset_top = -6.0
 offset_right = 60.0
@@ -41,6 +134,6 @@ offset_bottom = 9.0
 color = Color(1, 1, 0, 1)
 
 [node name="ShootingPoint" type="Node2D" parent="Gun"]
-position = Vector2(34, 9)
+position = Vector2(44, 6)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
