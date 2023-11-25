@@ -1,12 +1,7 @@
 extends Node2D
 
-func on_zoom_out():
-	$Worlds.position = $Worlds.position/2
-	pass
-
 func _input(event):
 	if event.is_action_pressed("zoom_out"):
-		#on_zoom_out()
 		$Camera2D.zoom.x = max($Camera2D.zoom.x/2, 0.25)
 		$Camera2D.zoom.y = max($Camera2D.zoom.y/2, 0.25)
 	if event.is_action_pressed("zoom_in"):
