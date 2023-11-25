@@ -160,13 +160,16 @@ label_settings = SubResource("LabelSettings_eerf3")
 [node name="Player" parent="." instance=ExtResource("3_7yxed")]
 position = Vector2(449, 216)
 
-[node name="Control" type="Control" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Control" type="Control" parent="Camera2D"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Label" type="Label" parent="Camera2D/Control"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 1.0
@@ -176,7 +179,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="Control"]
+[node name="ProgressBar" type="ProgressBar" parent="Camera2D/Control"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 1.0
@@ -186,6 +189,3 @@ max_value = 3.0
 step = 1.0
 rounded = true
 show_percentage = false
-
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0

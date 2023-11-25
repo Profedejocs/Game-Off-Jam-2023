@@ -68,7 +68,7 @@ func play_anim(movement):
 		if movement == 1 :
 			anim.play ("back_walk")
 		elif movement == 0 :
-			anim.play ("back_idle")	
+			anim.play ("back_idle")
 
 func _on_area_2d_body_entered(body):
 	if body != null and "Enemy" in body.name:

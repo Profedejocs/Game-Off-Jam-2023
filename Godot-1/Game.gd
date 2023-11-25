@@ -10,6 +10,17 @@ func _input(event):
 		$Camera2D.zoom.y = min($Camera2D.zoom.y*2, 1)
 
 func _process(delta):
+	if Global.tile1 != null and Global.tile2 != null:
+		var t1_pos = Global.tile1.global_position
+		var t2_pos = Global.tile2.global_position
+		if Global.tile1.has_player:
+			Global.tile1.change_player_pos(t2_pos)
+		if Global.tile2.has_player:
+			Global.tile2.change_player_pos(t1_pos)
+		Global.tile2.global_position = t1_pos
+		Global.tile1.global_position = t2_pos
+		Global.tile1 = null
+		Global.tile2 = null
 	if $Camera2D.zoom == Vector2.ONE:
 		zooming = false
 		$Camera2D.position.x = int($Player.global_position.x/1280)*1280
@@ -18,5 +29,5 @@ func _process(delta):
 		zooming = true
 		$Camera2D.position = Vector2.ZERO
 	Global.zooming = zooming
-	$Control/ProgressBar.value = $Player.hp
-	$Control/Label.text = str(max($Player.hp, 0))+" HP"
+	$Camera2D/Control/ProgressBar.value = $Player.hp
+	$Camera2D/Control/Label.text = str(max($Player.hp, 0))+" HP"
