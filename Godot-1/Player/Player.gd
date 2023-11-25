@@ -77,7 +77,7 @@ func _on_area_2d_body_entered(body):
 		Global.game_over = true
 
 func _input(event):
-	if event.is_action_pressed("shoot"):
+	if event.is_action_pressed("shoot") and not Global.zooming:
 		fire(self.mouse_dir)
 
 func fire(angle):
