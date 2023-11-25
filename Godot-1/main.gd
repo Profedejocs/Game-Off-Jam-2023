@@ -25,9 +25,11 @@ func change_player_pos(pos):
 func _on_area_2d_body_entered(body):
 	if body != null and "Player" in body.name:
 		player = body
+		player.world = self
 		has_player = true
 
 func _on_area_2d_body_exited(body):
 	if body != null and "Player" in body.name:
+		player.world = null
 		player = null
 		has_player = false
