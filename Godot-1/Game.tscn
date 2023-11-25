@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbi8ackoutlq8"]
+
+[ext_resource type="Script" path="res://Game.gd" id="1_8i711"]
+[ext_resource type="PackedScene" uid="uid://dyhstebufiwf" path="res://tile.tscn" id="2_q85al"]
+[ext_resource type="PackedScene" uid="uid://bbmq47f63njf6" path="res://Player/Player.tscn" id="3_7yxed"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_8i711")
+
+[node name="Worlds" type="Node2D" parent="."]
+
+[node name="Wrld0" parent="Worlds" instance=ExtResource("2_q85al")]
+
+[node name="Wrld1" parent="Worlds" instance=ExtResource("2_q85al")]
+position = Vector2(1159, -3)
+
+[node name="Wrld2" parent="Worlds" instance=ExtResource("2_q85al")]
+position = Vector2(11, 656)
+
+[node name="Wrld3" parent="Worlds" instance=ExtResource("2_q85al")]
+position = Vector2(1170, 653)
+
+[node name="Player" parent="." instance=ExtResource("3_7yxed")]
+position = Vector2(449, 216)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 120.0
+offset_bottom = 28.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 120.0
+offset_bottom = 28.0
+max_value = 3.0
+step = 1.0
+rounded = true
+show_percentage = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
