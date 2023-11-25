@@ -17,7 +17,7 @@ func _on_area_2d_body_entered(body):
 	dir = -dir
 
 func _on_area_2d_area_entered(area):
-	if area != null and "Bullet" in area.name:
+	if area != null and area.has_meta("type") and area.get_meta("type") == "bullet":
 		hp -= 1
 		area.queue_free()
 	if hp <= 0: queue_free()

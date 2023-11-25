@@ -2,10 +2,12 @@ extends CharacterBody2D
 
 @export var hp = 3
 var speed = 120
+var aim_speed = 1
 var current_dlr = "none"
+var mouse_dir = 0
 @onready var anim = $AnimatedSprite2D
 func  _physics_process(delta):
-	
+	mouse_dir = get_angle_to(get_global_mouse_position())
 	player_movement(delta)
 	
 
@@ -67,11 +69,6 @@ func play_anim(movement):
 			anim.play ("back_walk")
 		elif movement == 0 :
 			anim.play ("back_idle")	
-						
-					
-		
-
-
 
 func _on_area_2d_body_entered(body):
 	if body != null and "Enemy" in body.name:
@@ -81,11 +78,12 @@ func _on_area_2d_body_entered(body):
 
 func _input(event):
 	if event.is_action_pressed("shoot"):
-		fire(self.global_rotation)
+		fire(self.mouse_dir)
 
 func fire(angle):
 	var direction = Vector2(1.0, 0.0).rotated(angle).normalized()
 	var bullet = load("res://Player/Bullet/Bullet.tscn").instantiate()
 	bullet.global_position = $Gun/ShootingPoint.global_position
 	bullet.direction = direction
+	bullet.parent = self
 	get_parent().add_child(bullet)
