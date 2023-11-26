@@ -18,16 +18,22 @@ script = ExtResource("1_8i711")
 [node name="Wrld0" parent="WrldBundle1" instance=ExtResource("2_q85al")]
 
 [node name="Label" type="Label" parent="WrldBundle1/Wrld0"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 10.0
+offset_right = 50.0
+offset_bottom = 91.0
 text = "1"
 label_settings = SubResource("LabelSettings_eerf3")
+
+[node name="Player" parent="WrldBundle1/Wrld0" instance=ExtResource("3_7yxed")]
+unique_name_in_owner = true
+position = Vector2(449, 216)
 
 [node name="Wrld1" parent="WrldBundle1" instance=ExtResource("2_q85al")]
 position = Vector2(1280, 0)
 
 [node name="Label2" type="Label" parent="WrldBundle1/Wrld1"]
-offset_right = 40.0
+offset_left = 10.0
+offset_right = 50.0
 offset_bottom = 91.0
 text = "2"
 label_settings = SubResource("LabelSettings_eerf3")
@@ -36,7 +42,8 @@ label_settings = SubResource("LabelSettings_eerf3")
 position = Vector2(0, 720)
 
 [node name="Label3" type="Label" parent="WrldBundle1/Wrld2"]
-offset_right = 40.0
+offset_left = 10.0
+offset_right = 50.0
 offset_bottom = 91.0
 text = "3"
 label_settings = SubResource("LabelSettings_eerf3")
@@ -45,7 +52,8 @@ label_settings = SubResource("LabelSettings_eerf3")
 position = Vector2(1280, 720)
 
 [node name="Label4" type="Label" parent="WrldBundle1/Wrld3"]
-offset_right = 40.0
+offset_left = 10.0
+offset_right = 50.0
 offset_bottom = 91.0
 text = "4"
 label_settings = SubResource("LabelSettings_eerf3")
@@ -57,6 +65,24 @@ position = Vector2(1280, 720)
 shape = SubResource("RectangleShape2D_cm663")
 debug_color = Color(0.615686, 0.356863, 1, 0.419608)
 
+[node name="ColorRect" type="ColorRect" parent="WrldBundle1/Bundle1"]
+offset_right = 2560.0
+offset_bottom = 15.0
+
+[node name="ColorRect2" type="ColorRect" parent="WrldBundle1/Bundle1"]
+offset_top = 1440.0
+offset_right = 2560.0
+offset_bottom = 1455.0
+
+[node name="ColorRect3" type="ColorRect" parent="WrldBundle1/Bundle1"]
+offset_right = 15.0
+offset_bottom = 1440.0
+
+[node name="ColorRect4" type="ColorRect" parent="WrldBundle1/Bundle1"]
+offset_left = 2560.0
+offset_right = 2575.0
+offset_bottom = 1440.0
+
 [node name="WrldBundle2" type="Node2D" parent="."]
 position = Vector2(2560, 0)
 
@@ -64,7 +90,8 @@ position = Vector2(2560, 0)
 position = Vector2(0, 720)
 
 [node name="Label5" type="Label" parent="WrldBundle2/Wrld4"]
-offset_right = 40.0
+offset_left = 10.0
+offset_right = 50.0
 offset_bottom = 91.0
 text = "5"
 label_settings = SubResource("LabelSettings_eerf3")
@@ -72,7 +99,8 @@ label_settings = SubResource("LabelSettings_eerf3")
 [node name="Wrld5" parent="WrldBundle2" instance=ExtResource("2_q85al")]
 
 [node name="Label6" type="Label" parent="WrldBundle2/Wrld5"]
-offset_right = 40.0
+offset_left = 10.0
+offset_right = 50.0
 offset_bottom = 91.0
 text = "6"
 label_settings = SubResource("LabelSettings_eerf3")
@@ -81,7 +109,8 @@ label_settings = SubResource("LabelSettings_eerf3")
 position = Vector2(1280, 0)
 
 [node name="Label7" type="Label" parent="WrldBundle2/Wrld6"]
-offset_right = 40.0
+offset_left = 10.0
+offset_right = 50.0
 offset_bottom = 91.0
 text = "7"
 label_settings = SubResource("LabelSettings_eerf3")
@@ -90,7 +119,8 @@ label_settings = SubResource("LabelSettings_eerf3")
 position = Vector2(1280, 720)
 
 [node name="Label8" type="Label" parent="WrldBundle2/Wrld7"]
-offset_right = 40.0
+offset_left = 10.0
+offset_right = 50.0
 offset_bottom = 91.0
 text = "8"
 label_settings = SubResource("LabelSettings_eerf3")
@@ -102,14 +132,33 @@ position = Vector2(1280, 720)
 shape = SubResource("RectangleShape2D_cm663")
 debug_color = Color(0.615686, 0.356863, 1, 0.419608)
 
+[node name="ColorRect" type="ColorRect" parent="WrldBundle2/Bundle2"]
+offset_right = 2560.0
+offset_bottom = 15.0
+
+[node name="ColorRect2" type="ColorRect" parent="WrldBundle2/Bundle2"]
+offset_top = 1440.0
+offset_right = 2560.0
+offset_bottom = 1455.0
+
+[node name="ColorRect3" type="ColorRect" parent="WrldBundle2/Bundle2"]
+offset_right = 15.0
+offset_bottom = 1440.0
+
+[node name="ColorRect4" type="ColorRect" parent="WrldBundle2/Bundle2"]
+offset_left = 2560.0
+offset_right = 2575.0
+offset_bottom = 1440.0
+
 [node name="WrldBundle3" type="Node2D" parent="."]
 position = Vector2(0, 1440)
 
 [node name="Wrld0" parent="WrldBundle3" instance=ExtResource("2_q85al")]
 
 [node name="Label" type="Label" parent="WrldBundle3/Wrld0"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 10.0
+offset_right = 50.0
+offset_bottom = 91.0
 text = "9"
 label_settings = SubResource("LabelSettings_eerf3")
 
@@ -117,7 +166,8 @@ label_settings = SubResource("LabelSettings_eerf3")
 position = Vector2(1280, 0)
 
 [node name="Label2" type="Label" parent="WrldBundle3/Wrld1"]
-offset_right = 40.0
+offset_left = 10.0
+offset_right = 84.0
 offset_bottom = 91.0
 text = "10"
 label_settings = SubResource("LabelSettings_eerf3")
@@ -126,7 +176,8 @@ label_settings = SubResource("LabelSettings_eerf3")
 position = Vector2(0, 720)
 
 [node name="Label3" type="Label" parent="WrldBundle3/Wrld2"]
-offset_right = 40.0
+offset_left = 10.0
+offset_right = 84.0
 offset_bottom = 91.0
 text = "11"
 label_settings = SubResource("LabelSettings_eerf3")
@@ -135,7 +186,8 @@ label_settings = SubResource("LabelSettings_eerf3")
 position = Vector2(1280, 720)
 
 [node name="Label4" type="Label" parent="WrldBundle3/Wrld3"]
-offset_right = 40.0
+offset_left = 10.0
+offset_right = 84.0
 offset_bottom = 91.0
 text = "12"
 label_settings = SubResource("LabelSettings_eerf3")
@@ -147,6 +199,24 @@ position = Vector2(1280, 720)
 shape = SubResource("RectangleShape2D_cm663")
 debug_color = Color(0.615686, 0.356863, 1, 0.419608)
 
+[node name="ColorRect" type="ColorRect" parent="WrldBundle3/Bundle3"]
+offset_right = 2560.0
+offset_bottom = 15.0
+
+[node name="ColorRect2" type="ColorRect" parent="WrldBundle3/Bundle3"]
+offset_top = 1440.0
+offset_right = 2560.0
+offset_bottom = 1455.0
+
+[node name="ColorRect3" type="ColorRect" parent="WrldBundle3/Bundle3"]
+offset_right = 15.0
+offset_bottom = 1440.0
+
+[node name="ColorRect4" type="ColorRect" parent="WrldBundle3/Bundle3"]
+offset_left = 2560.0
+offset_right = 2575.0
+offset_bottom = 1440.0
+
 [node name="WrldBundle4" type="Node2D" parent="."]
 position = Vector2(2560, 1440)
 
@@ -154,7 +224,8 @@ position = Vector2(2560, 1440)
 position = Vector2(0, 720)
 
 [node name="Label5" type="Label" parent="WrldBundle4/Wrld4"]
-offset_right = 40.0
+offset_left = 10.0
+offset_right = 84.0
 offset_bottom = 91.0
 text = "13"
 label_settings = SubResource("LabelSettings_eerf3")
@@ -162,7 +233,8 @@ label_settings = SubResource("LabelSettings_eerf3")
 [node name="Wrld5" parent="WrldBundle4" instance=ExtResource("2_q85al")]
 
 [node name="Label6" type="Label" parent="WrldBundle4/Wrld5"]
-offset_right = 40.0
+offset_left = 10.0
+offset_right = 84.0
 offset_bottom = 91.0
 text = "14"
 label_settings = SubResource("LabelSettings_eerf3")
@@ -171,7 +243,8 @@ label_settings = SubResource("LabelSettings_eerf3")
 position = Vector2(1280, 0)
 
 [node name="Label7" type="Label" parent="WrldBundle4/Wrld6"]
-offset_right = 40.0
+offset_left = 10.0
+offset_right = 84.0
 offset_bottom = 91.0
 text = "15"
 label_settings = SubResource("LabelSettings_eerf3")
@@ -180,7 +253,8 @@ label_settings = SubResource("LabelSettings_eerf3")
 position = Vector2(1280, 720)
 
 [node name="Label8" type="Label" parent="WrldBundle4/Wrld7"]
-offset_right = 40.0
+offset_left = 10.0
+offset_right = 84.0
 offset_bottom = 91.0
 text = "16"
 label_settings = SubResource("LabelSettings_eerf3")
@@ -192,8 +266,23 @@ position = Vector2(1280, 720)
 shape = SubResource("RectangleShape2D_cm663")
 debug_color = Color(0.615686, 0.356863, 1, 0.419608)
 
-[node name="Player" parent="." instance=ExtResource("3_7yxed")]
-position = Vector2(449, 216)
+[node name="ColorRect" type="ColorRect" parent="WrldBundle4/Bundle4"]
+offset_right = 2560.0
+offset_bottom = 15.0
+
+[node name="ColorRect2" type="ColorRect" parent="WrldBundle4/Bundle4"]
+offset_top = 1440.0
+offset_right = 2560.0
+offset_bottom = 1455.0
+
+[node name="ColorRect3" type="ColorRect" parent="WrldBundle4/Bundle4"]
+offset_right = 15.0
+offset_bottom = 1440.0
+
+[node name="ColorRect4" type="ColorRect" parent="WrldBundle4/Bundle4"]
+offset_left = 2560.0
+offset_right = 2575.0
+offset_bottom = 1440.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -204,8 +293,10 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="Camera2D/Control"]
-layout_mode = 0
+[node name="Bar" type="Node2D" parent="Camera2D/Control"]
+position = Vector2(20, 15)
+
+[node name="Label" type="Label" parent="Camera2D/Control/Bar"]
 offset_left = 4.0
 offset_top = 1.0
 offset_right = 120.0
@@ -214,12 +305,9 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="Camera2D/Control"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 1.0
-offset_right = 120.0
-offset_bottom = 28.0
+[node name="ProgressBar" type="ProgressBar" parent="Camera2D/Control/Bar"]
+offset_right = 116.0
+offset_bottom = 27.0
 max_value = 3.0
 step = 1.0
 rounded = true
