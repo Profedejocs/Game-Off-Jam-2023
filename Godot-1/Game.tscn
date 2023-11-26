@@ -194,7 +194,6 @@ debug_color = Color(0.615686, 0.356863, 1, 0.419608)
 
 [node name="Player" parent="." instance=ExtResource("3_7yxed")]
 position = Vector2(449, 216)
-collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
