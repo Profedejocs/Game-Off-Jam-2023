@@ -27,8 +27,8 @@ func _on_area_2d_body_entered(body):
 		player.world = self
 		var old_par = player.get_parent()
 		if old_par != self and not player == null:
-			#old_par.remove_child(player)
-			self.add_child(player)
+			player.call_deferred("reparent", self)
+			#self.add_child(player)
 		has_player = true
 
 func _on_area_2d_body_exited(body):

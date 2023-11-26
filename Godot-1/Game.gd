@@ -15,7 +15,7 @@ func select_bundle():
 func _input(event):
 	if event.is_action_pressed("select") and $Camera2D.zoom == Vector2(0.25, 0.25):
 		select_bundle()
-	if player.world != null:
+	if player != null and player.world != null:
 		$Camera2D.position = player.world.global_position
 	if $Camera2D.zoom == Vector2(0.25, 0.25):
 		$Camera2D.position = Vector2.ZERO
@@ -47,7 +47,7 @@ func switch_tiles():
 func _physics_process(delta):
 	for i in range(len(bundles)):
 		bundles[i].get_node("Bundle"+str(i+1)+"/CollisionShape2D").disabled = get_node("Camera2D").zoom != Vector2(0.25, 0.25)
-	if player.world != null:
+	if player != null and player.world != null:
 		$Camera2D.position.x = min(max(player.world.global_position.x, 0), 2560)
 		$Camera2D.position.y = min(max(player.world.global_position.y, 0), 1440)
 	if $Camera2D.zoom == Vector2(0.25, 0.25):
@@ -60,8 +60,9 @@ func _physics_process(delta):
 		#	$Camera2D.global_position = Vector2(cx, cy)
 	zooming = $Camera2D.zoom != Vector2.ONE
 	Global.zooming = zooming
-	$Camera2D/Control/Bar/ProgressBar.value = player.hp
-	$Camera2D/Control/Bar/Label.text = str(max(player.hp, 0))+" HP"
+	if player != null:
+		$Camera2D/Control/Bar/ProgressBar.value = player.hp
+		$Camera2D/Control/Bar/Label.text = str(max(player.hp, 0))+" HP"
 
 func _process(delta):
 	if Global.tile1 != null and Global.tile2 != null:
