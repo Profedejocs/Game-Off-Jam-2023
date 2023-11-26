@@ -30,7 +30,9 @@ func _physics_process(delta):
 		$Camera2D.position = $Player.world.global_position
 	if $Camera2D.zoom == Vector2(0.25, 0.25):
 		$Camera2D.position = Vector2.ZERO
-	zooming = $Camera2D.zoom == Vector2.ONE
+	else:
+		$Camera2D.position = Vector2(int($Player.position.x/1280)*1280, int($Player.position.y/720)*720)
+	zooming = $Camera2D.zoom != Vector2.ONE
 	Global.zooming = zooming
 	$Camera2D/Control/ProgressBar.value = $Player.hp
 	$Camera2D/Control/Label.text = str(max($Player.hp, 0))+" HP"
