@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbi8ackoutlq8"]
+[gd_scene load_steps=10 format=3 uid="uid://dbi8ackoutlq8"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_8i711"]
 [ext_resource type="PackedScene" uid="uid://dyhstebufiwf" path="res://tile.tscn" id="2_q85al"]
 [ext_resource type="PackedScene" uid="uid://bbmq47f63njf6" path="res://Player/Player.tscn" id="3_7yxed"]
+[ext_resource type="PackedScene" uid="uid://03tq3pwo4pyd" path="res://Wall Types/Simple Wall Y.tscn" id="3_uotks"]
+[ext_resource type="PackedScene" uid="uid://7mgvty2u36hr" path="res://Wall Types/Simple Wall X.tscn" id="4_j31j0"]
+[ext_resource type="PackedScene" uid="uid://dmbgcwirrul4u" path="res://Wall Types/Door Wall X.tscn" id="5_lpldf"]
+[ext_resource type="PackedScene" uid="uid://dp2io88qywvu7" path="res://Wall Types/Door Wall Y.tscn" id="6_wtfip"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_eerf3"]
 font_size = 64
@@ -16,6 +20,18 @@ script = ExtResource("1_8i711")
 [node name="WrldBundle1" type="Node2D" parent="."]
 
 [node name="Wrld0" parent="WrldBundle1" instance=ExtResource("2_q85al")]
+
+[node name="Walls" type="Node2D" parent="WrldBundle1/Wrld0"]
+
+[node name="Simple Wall Y" parent="WrldBundle1/Wrld0/Walls" instance=ExtResource("3_uotks")]
+
+[node name="Simple Wall X" parent="WrldBundle1/Wrld0/Walls" instance=ExtResource("4_j31j0")]
+
+[node name="Door Wall X" parent="WrldBundle1/Wrld0/Walls" instance=ExtResource("5_lpldf")]
+position = Vector2(0, 710)
+
+[node name="Door Wall Y" parent="WrldBundle1/Wrld0/Walls" instance=ExtResource("6_wtfip")]
+position = Vector2(1270, 0)
 
 [node name="Label" type="Label" parent="WrldBundle1/Wrld0"]
 offset_left = 10.0
@@ -66,19 +82,23 @@ shape = SubResource("RectangleShape2D_cm663")
 debug_color = Color(0.615686, 0.356863, 1, 0.419608)
 
 [node name="ColorRect" type="ColorRect" parent="WrldBundle1/Bundle1"]
+visible = false
 offset_right = 2560.0
 offset_bottom = 15.0
 
 [node name="ColorRect2" type="ColorRect" parent="WrldBundle1/Bundle1"]
+visible = false
 offset_top = 1440.0
 offset_right = 2560.0
 offset_bottom = 1455.0
 
 [node name="ColorRect3" type="ColorRect" parent="WrldBundle1/Bundle1"]
+visible = false
 offset_right = 15.0
 offset_bottom = 1440.0
 
 [node name="ColorRect4" type="ColorRect" parent="WrldBundle1/Bundle1"]
+visible = false
 offset_left = 2560.0
 offset_right = 2575.0
 offset_bottom = 1440.0
@@ -133,19 +153,23 @@ shape = SubResource("RectangleShape2D_cm663")
 debug_color = Color(0.615686, 0.356863, 1, 0.419608)
 
 [node name="ColorRect" type="ColorRect" parent="WrldBundle2/Bundle2"]
+visible = false
 offset_right = 2560.0
 offset_bottom = 15.0
 
 [node name="ColorRect2" type="ColorRect" parent="WrldBundle2/Bundle2"]
+visible = false
 offset_top = 1440.0
 offset_right = 2560.0
 offset_bottom = 1455.0
 
 [node name="ColorRect3" type="ColorRect" parent="WrldBundle2/Bundle2"]
+visible = false
 offset_right = 15.0
 offset_bottom = 1440.0
 
 [node name="ColorRect4" type="ColorRect" parent="WrldBundle2/Bundle2"]
+visible = false
 offset_left = 2560.0
 offset_right = 2575.0
 offset_bottom = 1440.0
@@ -200,19 +224,23 @@ shape = SubResource("RectangleShape2D_cm663")
 debug_color = Color(0.615686, 0.356863, 1, 0.419608)
 
 [node name="ColorRect" type="ColorRect" parent="WrldBundle3/Bundle3"]
+visible = false
 offset_right = 2560.0
 offset_bottom = 15.0
 
 [node name="ColorRect2" type="ColorRect" parent="WrldBundle3/Bundle3"]
+visible = false
 offset_top = 1440.0
 offset_right = 2560.0
 offset_bottom = 1455.0
 
 [node name="ColorRect3" type="ColorRect" parent="WrldBundle3/Bundle3"]
+visible = false
 offset_right = 15.0
 offset_bottom = 1440.0
 
 [node name="ColorRect4" type="ColorRect" parent="WrldBundle3/Bundle3"]
+visible = false
 offset_left = 2560.0
 offset_right = 2575.0
 offset_bottom = 1440.0
@@ -267,19 +295,23 @@ shape = SubResource("RectangleShape2D_cm663")
 debug_color = Color(0.615686, 0.356863, 1, 0.419608)
 
 [node name="ColorRect" type="ColorRect" parent="WrldBundle4/Bundle4"]
+visible = false
 offset_right = 2560.0
 offset_bottom = 15.0
 
 [node name="ColorRect2" type="ColorRect" parent="WrldBundle4/Bundle4"]
+visible = false
 offset_top = 1440.0
 offset_right = 2560.0
 offset_bottom = 1455.0
 
 [node name="ColorRect3" type="ColorRect" parent="WrldBundle4/Bundle4"]
+visible = false
 offset_right = 15.0
 offset_bottom = 1440.0
 
 [node name="ColorRect4" type="ColorRect" parent="WrldBundle4/Bundle4"]
+visible = false
 offset_left = 2560.0
 offset_right = 2575.0
 offset_bottom = 1440.0
