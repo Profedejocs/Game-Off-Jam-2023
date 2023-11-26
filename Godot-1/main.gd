@@ -6,10 +6,9 @@ var player = null
 func _on_area_2d_mouse_entered(): mouse_inside = true
 func _on_area_2d_mouse_exited(): 
 	mouse_inside = false
-	#if selected:
-	#	print("Deselected")
-	#	selected = mouse_inside
-func _input(event): if mouse_inside and event.is_action_pressed("select"):
+func _process(delta):
+	$Area2D/CollisionShape2D.disabled = get_parent().get_parent().get_node("Camera2D").zoom != Vector2(0.5, 0.5)
+func _input(event): if mouse_inside and event.is_action_pressed("select") and get_parent().get_parent().get_node("Camera2D").zoom == Vector2(0.5, 0.5):
 	print("Selected or deselected")
 	selected = not selected
 	if Global.tile1 == null:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbi8ackoutlq8"]
+[gd_scene load_steps=6 format=3 uid="uid://dbi8ackoutlq8"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_8i711"]
 [ext_resource type="PackedScene" uid="uid://dyhstebufiwf" path="res://tile.tscn" id="2_q85al"]
@@ -7,158 +7,194 @@
 [sub_resource type="LabelSettings" id="LabelSettings_eerf3"]
 font_size = 64
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cm663"]
+size = Vector2(2560, 1440)
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_8i711")
 
-[node name="TopWorlds" type="Node2D" parent="."]
+[node name="WrldBundle1" type="Node2D" parent="."]
 
-[node name="Wrld0" parent="TopWorlds" instance=ExtResource("2_q85al")]
+[node name="Wrld0" parent="WrldBundle1" instance=ExtResource("2_q85al")]
 
-[node name="Label" type="Label" parent="TopWorlds/Wrld0"]
+[node name="Label" type="Label" parent="WrldBundle1/Wrld0"]
 offset_right = 40.0
 offset_bottom = 23.0
 text = "1"
 label_settings = SubResource("LabelSettings_eerf3")
 
-[node name="Wrld1" parent="TopWorlds" instance=ExtResource("2_q85al")]
+[node name="Wrld1" parent="WrldBundle1" instance=ExtResource("2_q85al")]
 position = Vector2(1280, 0)
 
-[node name="Label2" type="Label" parent="TopWorlds/Wrld1"]
+[node name="Label2" type="Label" parent="WrldBundle1/Wrld1"]
 offset_right = 40.0
 offset_bottom = 91.0
 text = "2"
 label_settings = SubResource("LabelSettings_eerf3")
 
-[node name="Wrld2" parent="TopWorlds" instance=ExtResource("2_q85al")]
+[node name="Wrld2" parent="WrldBundle1" instance=ExtResource("2_q85al")]
 position = Vector2(0, 720)
 
-[node name="Label3" type="Label" parent="TopWorlds/Wrld2"]
+[node name="Label3" type="Label" parent="WrldBundle1/Wrld2"]
 offset_right = 40.0
 offset_bottom = 91.0
 text = "3"
 label_settings = SubResource("LabelSettings_eerf3")
 
-[node name="Wrld3" parent="TopWorlds" instance=ExtResource("2_q85al")]
+[node name="Wrld3" parent="WrldBundle1" instance=ExtResource("2_q85al")]
 position = Vector2(1280, 720)
 
-[node name="Label4" type="Label" parent="TopWorlds/Wrld3"]
+[node name="Label4" type="Label" parent="WrldBundle1/Wrld3"]
 offset_right = 40.0
 offset_bottom = 91.0
 text = "4"
 label_settings = SubResource("LabelSettings_eerf3")
 
-[node name="Wrld4" parent="TopWorlds" instance=ExtResource("2_q85al")]
-position = Vector2(2560, 720)
+[node name="Bundle1" type="Area2D" parent="WrldBundle1"]
 
-[node name="Label5" type="Label" parent="TopWorlds/Wrld4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WrldBundle1/Bundle1"]
+position = Vector2(1280, 720)
+shape = SubResource("RectangleShape2D_cm663")
+debug_color = Color(0.615686, 0.356863, 1, 0.419608)
+
+[node name="WrldBundle2" type="Node2D" parent="."]
+position = Vector2(2560, 0)
+
+[node name="Wrld4" parent="WrldBundle2" instance=ExtResource("2_q85al")]
+position = Vector2(0, 720)
+
+[node name="Label5" type="Label" parent="WrldBundle2/Wrld4"]
 offset_right = 40.0
 offset_bottom = 91.0
 text = "5"
 label_settings = SubResource("LabelSettings_eerf3")
 
-[node name="Wrld5" parent="TopWorlds" instance=ExtResource("2_q85al")]
-position = Vector2(2560, 0)
+[node name="Wrld5" parent="WrldBundle2" instance=ExtResource("2_q85al")]
 
-[node name="Label6" type="Label" parent="TopWorlds/Wrld5"]
+[node name="Label6" type="Label" parent="WrldBundle2/Wrld5"]
 offset_right = 40.0
 offset_bottom = 91.0
 text = "6"
 label_settings = SubResource("LabelSettings_eerf3")
 
-[node name="Wrld6" parent="TopWorlds" instance=ExtResource("2_q85al")]
-position = Vector2(3840, 0)
+[node name="Wrld6" parent="WrldBundle2" instance=ExtResource("2_q85al")]
+position = Vector2(1280, 0)
 
-[node name="Label7" type="Label" parent="TopWorlds/Wrld6"]
+[node name="Label7" type="Label" parent="WrldBundle2/Wrld6"]
 offset_right = 40.0
 offset_bottom = 91.0
 text = "7"
 label_settings = SubResource("LabelSettings_eerf3")
 
-[node name="Wrld7" parent="TopWorlds" instance=ExtResource("2_q85al")]
-position = Vector2(3840, 720)
+[node name="Wrld7" parent="WrldBundle2" instance=ExtResource("2_q85al")]
+position = Vector2(1280, 720)
 
-[node name="Label8" type="Label" parent="TopWorlds/Wrld7"]
+[node name="Label8" type="Label" parent="WrldBundle2/Wrld7"]
 offset_right = 40.0
 offset_bottom = 91.0
 text = "8"
 label_settings = SubResource("LabelSettings_eerf3")
 
-[node name="BottomWorlds" type="Node2D" parent="."]
+[node name="Bundle2" type="Area2D" parent="WrldBundle2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WrldBundle2/Bundle2"]
+position = Vector2(1280, 720)
+shape = SubResource("RectangleShape2D_cm663")
+debug_color = Color(0.615686, 0.356863, 1, 0.419608)
+
+[node name="WrldBundle3" type="Node2D" parent="."]
 position = Vector2(0, 1440)
 
-[node name="Wrld0" parent="BottomWorlds" instance=ExtResource("2_q85al")]
+[node name="Wrld0" parent="WrldBundle3" instance=ExtResource("2_q85al")]
 
-[node name="Label" type="Label" parent="BottomWorlds/Wrld0"]
+[node name="Label" type="Label" parent="WrldBundle3/Wrld0"]
 offset_right = 40.0
 offset_bottom = 23.0
 text = "9"
 label_settings = SubResource("LabelSettings_eerf3")
 
-[node name="Wrld1" parent="BottomWorlds" instance=ExtResource("2_q85al")]
+[node name="Wrld1" parent="WrldBundle3" instance=ExtResource("2_q85al")]
 position = Vector2(1280, 0)
 
-[node name="Label2" type="Label" parent="BottomWorlds/Wrld1"]
+[node name="Label2" type="Label" parent="WrldBundle3/Wrld1"]
 offset_right = 40.0
 offset_bottom = 91.0
 text = "10"
 label_settings = SubResource("LabelSettings_eerf3")
 
-[node name="Wrld2" parent="BottomWorlds" instance=ExtResource("2_q85al")]
+[node name="Wrld2" parent="WrldBundle3" instance=ExtResource("2_q85al")]
 position = Vector2(0, 720)
 
-[node name="Label3" type="Label" parent="BottomWorlds/Wrld2"]
+[node name="Label3" type="Label" parent="WrldBundle3/Wrld2"]
 offset_right = 40.0
 offset_bottom = 91.0
 text = "11"
 label_settings = SubResource("LabelSettings_eerf3")
 
-[node name="Wrld3" parent="BottomWorlds" instance=ExtResource("2_q85al")]
+[node name="Wrld3" parent="WrldBundle3" instance=ExtResource("2_q85al")]
 position = Vector2(1280, 720)
 
-[node name="Label4" type="Label" parent="BottomWorlds/Wrld3"]
+[node name="Label4" type="Label" parent="WrldBundle3/Wrld3"]
 offset_right = 40.0
 offset_bottom = 91.0
 text = "12"
 label_settings = SubResource("LabelSettings_eerf3")
 
-[node name="Wrld4" parent="BottomWorlds" instance=ExtResource("2_q85al")]
-position = Vector2(2560, 720)
+[node name="Bundle3" type="Area2D" parent="WrldBundle3"]
 
-[node name="Label5" type="Label" parent="BottomWorlds/Wrld4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WrldBundle3/Bundle3"]
+position = Vector2(1280, 720)
+shape = SubResource("RectangleShape2D_cm663")
+debug_color = Color(0.615686, 0.356863, 1, 0.419608)
+
+[node name="WrldBundle4" type="Node2D" parent="."]
+position = Vector2(2560, 1440)
+
+[node name="Wrld4" parent="WrldBundle4" instance=ExtResource("2_q85al")]
+position = Vector2(0, 720)
+
+[node name="Label5" type="Label" parent="WrldBundle4/Wrld4"]
 offset_right = 40.0
 offset_bottom = 91.0
 text = "13"
 label_settings = SubResource("LabelSettings_eerf3")
 
-[node name="Wrld5" parent="BottomWorlds" instance=ExtResource("2_q85al")]
-position = Vector2(2560, 0)
+[node name="Wrld5" parent="WrldBundle4" instance=ExtResource("2_q85al")]
 
-[node name="Label6" type="Label" parent="BottomWorlds/Wrld5"]
+[node name="Label6" type="Label" parent="WrldBundle4/Wrld5"]
 offset_right = 40.0
 offset_bottom = 91.0
 text = "14"
 label_settings = SubResource("LabelSettings_eerf3")
 
-[node name="Wrld6" parent="BottomWorlds" instance=ExtResource("2_q85al")]
-position = Vector2(3840, 0)
+[node name="Wrld6" parent="WrldBundle4" instance=ExtResource("2_q85al")]
+position = Vector2(1280, 0)
 
-[node name="Label7" type="Label" parent="BottomWorlds/Wrld6"]
+[node name="Label7" type="Label" parent="WrldBundle4/Wrld6"]
 offset_right = 40.0
 offset_bottom = 91.0
 text = "15"
 label_settings = SubResource("LabelSettings_eerf3")
 
-[node name="Wrld7" parent="BottomWorlds" instance=ExtResource("2_q85al")]
-position = Vector2(3840, 720)
+[node name="Wrld7" parent="WrldBundle4" instance=ExtResource("2_q85al")]
+position = Vector2(1280, 720)
 
-[node name="Label8" type="Label" parent="BottomWorlds/Wrld7"]
+[node name="Label8" type="Label" parent="WrldBundle4/Wrld7"]
 offset_right = 40.0
 offset_bottom = 91.0
 text = "16"
 label_settings = SubResource("LabelSettings_eerf3")
 
+[node name="Bundle4" type="Area2D" parent="WrldBundle4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WrldBundle4/Bundle4"]
+position = Vector2(1280, 720)
+shape = SubResource("RectangleShape2D_cm663")
+debug_color = Color(0.615686, 0.356863, 1, 0.419608)
+
 [node name="Player" parent="." instance=ExtResource("3_7yxed")]
 position = Vector2(449, 216)
+collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -189,3 +225,12 @@ max_value = 3.0
 step = 1.0
 rounded = true
 show_percentage = false
+
+[connection signal="mouse_entered" from="WrldBundle1/Bundle1" to="." method="_on_bundle_1_mouse_entered"]
+[connection signal="mouse_exited" from="WrldBundle1/Bundle1" to="." method="_on_bundle_1_mouse_exited"]
+[connection signal="mouse_entered" from="WrldBundle2/Bundle2" to="." method="_on_bundle_2_mouse_entered"]
+[connection signal="mouse_exited" from="WrldBundle2/Bundle2" to="." method="_on_bundle_2_mouse_exited"]
+[connection signal="mouse_entered" from="WrldBundle3/Bundle3" to="." method="_on_bundle_3_mouse_entered"]
+[connection signal="mouse_exited" from="WrldBundle3/Bundle3" to="." method="_on_bundle_3_mouse_exited"]
+[connection signal="mouse_entered" from="WrldBundle4/Bundle4" to="." method="_on_bundle_4_mouse_entered"]
+[connection signal="mouse_exited" from="WrldBundle4/Bundle4" to="." method="_on_bundle_4_mouse_exited"]

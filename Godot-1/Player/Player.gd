@@ -8,6 +8,7 @@ var mouse_dir = 0
 var world = get_parent()
 @onready var anim = $AnimatedSprite2D
 func  _physics_process(delta):
+	$AnimatedSprite2D.visible = true
 	mouse_dir = get_angle_to(get_global_mouse_position())
 	player_movement(delta)
 	
