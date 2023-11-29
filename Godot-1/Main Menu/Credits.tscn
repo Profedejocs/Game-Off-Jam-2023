@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bda1bh06mb8rp"]
+
+[ext_resource type="Script" path="res://Main Menu/Credits.gd" id="1_s70u8"]
+[ext_resource type="Texture2D" uid="uid://d06jls2o6jo4t" path="res://assets/04CREDITS.jpg" id="2_dlssw"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s70u8")
+
+[node name="04credits" type="Sprite2D" parent="."]
+texture = ExtResource("2_dlssw")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 499.0
+offset_top = -230.0
+offset_right = 566.0
+offset_bottom = -165.0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
