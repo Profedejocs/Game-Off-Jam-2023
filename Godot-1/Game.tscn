@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dbi8ackoutlq8"]
+[gd_scene load_steps=13 format=3 uid="uid://dbi8ackoutlq8"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_8i711"]
 [ext_resource type="PackedScene" uid="uid://dyhstebufiwf" path="res://tile.tscn" id="2_q85al"]
@@ -8,8 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dmbgcwirrul4u" path="res://Wall Types/Door Wall X.tscn" id="5_lpldf"]
 [ext_resource type="PackedScene" uid="uid://dp2io88qywvu7" path="res://Wall Types/Door Wall Y.tscn" id="6_wtfip"]
 [ext_resource type="Texture2D" uid="uid://cpi5m3yy5i2mr" path="res://assets/Bar/Img-3.png" id="8_1w4l0"]
-[ext_resource type="Texture2D" uid="uid://bbksqnl2yjadm" path="res://assets/Bar/Img-2.png" id="9_f4gl4"]
-[ext_resource type="Texture2D" uid="uid://b8kx0lmxxjj4a" path="res://assets/Bar/Img-1.png" id="10_46327"]
+[ext_resource type="Texture2D" uid="uid://xwd3xx45w1vb" path="res://assets/Img-4.png" id="9_w7g8p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_eerf3"]
 font_size = 64
@@ -351,7 +350,7 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("8_1w4l0")
 
 [node name="Label" type="Label" parent="Camera2D/Control/NewBar"]
-offset_left = 26.0
+offset_left = 47.0
 offset_top = 115.0
 offset_right = 92.0
 offset_bottom = 135.0
@@ -360,41 +359,10 @@ label_settings = SubResource("LabelSettings_cjsun")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Health" type="Node2D" parent="Camera2D/Control/NewBar"]
-
-[node name="Empty" type="Node2D" parent="Camera2D/Control/NewBar/Health"]
-
-[node name="H1 Empty" type="Sprite2D" parent="Camera2D/Control/NewBar/Health/Empty"]
-position = Vector2(155, 110)
+[node name="Img-4" type="Sprite2D" parent="Camera2D/Control/NewBar"]
+position = Vector2(49, 125)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("10_46327")
-
-[node name="H2 Empty" type="Sprite2D" parent="Camera2D/Control/NewBar/Health/Empty"]
-position = Vector2(230, 110)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("10_46327")
-
-[node name="H3 Empty" type="Sprite2D" parent="Camera2D/Control/NewBar/Health/Empty"]
-position = Vector2(305, 110)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("10_46327")
-
-[node name="Full" type="Node2D" parent="Camera2D/Control/NewBar/Health"]
-
-[node name="H1 Full" type="Sprite2D" parent="Camera2D/Control/NewBar/Health/Full"]
-position = Vector2(155, 110)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_f4gl4")
-
-[node name="H2 Full" type="Sprite2D" parent="Camera2D/Control/NewBar/Health/Full"]
-position = Vector2(230, 110)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_f4gl4")
-
-[node name="H3 Full" type="Sprite2D" parent="Camera2D/Control/NewBar/Health/Full"]
-position = Vector2(305, 110)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_f4gl4")
+texture = ExtResource("9_w7g8p")
 
 [connection signal="mouse_entered" from="WrldBundle1/Bundle1" to="." method="_on_bundle_1_mouse_entered"]
 [connection signal="mouse_exited" from="WrldBundle1/Bundle1" to="." method="_on_bundle_1_mouse_exited"]
