@@ -61,8 +61,9 @@ func _physics_process(delta):
 	zooming = $Camera2D.zoom != Vector2.ONE
 	Global.zooming = zooming
 	if player != null:
-		$Camera2D/Control/Bar/ProgressBar.value = player.hp
-		$Camera2D/Control/Bar/Label.text = str(max(player.hp, 0))+" HP"
+		set_bar()
+		#$Camera2D/Control/Bar/ProgressBar.value = player.hp
+		$Camera2D/Control/NewBar/Label.text = str(max(player.hp, 0))+" HP"
 
 func _process(delta):
 	if Global.tile1 != null and Global.tile2 != null:
@@ -96,6 +97,14 @@ func deselect_bundle(t):
 		b2 = null
 	else:
 		return null
+
+func set_bar():
+	var h = player.hp
+	for i in get_node("Camera2D/Control/NewBar/Health/Full").get_children():
+		if i != null and int(str(i.name)) <= h:
+			i.visible = true
+		else:
+			i.visible = false
 
 func _on_bundle_1_mouse_entered(): on_bundle[0] = true
 func _on_bundle_2_mouse_entered(): on_bundle[1] = true
