@@ -343,6 +343,7 @@ rounded = true
 show_percentage = false
 
 [node name="NewBar" type="Node2D" parent="Camera2D/Control"]
+position = Vector2(0, 5)
 
 [node name="Img-3" type="Sprite2D" parent="Camera2D/Control/NewBar"]
 position = Vector2(59, 61)

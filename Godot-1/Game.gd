@@ -47,17 +47,17 @@ func switch_tiles():
 func _physics_process(delta):
 	for i in range(len(bundles)):
 		bundles[i].get_node("Bundle"+str(i+1)+"/CollisionShape2D").disabled = get_node("Camera2D").zoom != Vector2(0.25, 0.25)
-	if player != null and player.world != null:
-		$Camera2D.position.x = min(max(player.world.global_position.x, 0), 2560)
-		$Camera2D.position.y = min(max(player.world.global_position.y, 0), 1440)
 	if $Camera2D.zoom == Vector2(0.25, 0.25):
 		$Camera2D.position = Vector2.ZERO
-	else:
-		pass
-		#var cx = min(max(int(player.position.x/1280)*1280, 0), 1280)
-		#var cy = min(max(int(player.position.y/720)*720, 0), 720)
-		#if $Camera2D.global_position != Vector2(cx, cy):
-		#	$Camera2D.global_position = Vector2(cx, cy)
+	if $Camera2D.zoom == Vector2(0.5, 0.5):
+		var cx = min(max(int(player.position.x/1280)*1280, 0), 1280)
+		var cy = min(max(int(player.position.y/720)*720, 0), 720)
+		if $Camera2D.global_position != Vector2(cx, cy):
+			$Camera2D.global_position = Vector2(cx, cy)
+	if $Camera2D.zoom == Vector2.ONE:
+		if player != null and player.world != null:
+			$Camera2D.position.x = min(max(player.world.global_position.x, 0), 2560)
+			$Camera2D.position.y = min(max(player.world.global_position.y, 0), 1440)
 	zooming = $Camera2D.zoom != Vector2.ONE
 	Global.zooming = zooming
 	if player != null:

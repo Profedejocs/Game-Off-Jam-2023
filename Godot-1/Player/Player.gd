@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var hp = 3
-var speed = 120
+var speed = 6000
 var aim_speed = 1
 var current_dlr = "none"
 var mouse_dir = 0
@@ -41,7 +41,7 @@ func player_movement(delta):
 		velocity.y = 0
 		velocity.x = 0	
 	
-	
+	velocity *= delta
 	move_and_slide()	
 
 func play_anim(movement):
